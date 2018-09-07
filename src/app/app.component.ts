@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'd10assessment';
+  title = '2018 Enrollment Registration Form';
 }
