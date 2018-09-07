@@ -1,5 +1,6 @@
 import { Component, Output, Input, EventEmitter, OnInit } from '@angular/core';
-/*import {RegFormDetail} from './components/regform.component';*/
+import { RegUser } from './shared/regdataexport';
+import { UsersDataService } from './services/users-data.service';
 
 export interface RegFormList {
   email: string;
@@ -24,13 +25,12 @@ export class AppComponent implements OnInit {
   model = null;
 
 
-ngOnInit () {
-/*  this.model = new regUser('','','','','','',null,'','MY','', 0, '');
-/*
-this.userService.getAllReviews()
+ngOnInit () { }
+/*this.model = new RegUser ('', '', '', '', null, '', '', '');
+this.UsersDataService.RegUser()
   .subscribe(result => {
-    this.reviews = result;
-  });*/
+    this.users = result;
+  });
 }
   /*RegFormUpdated: RegFormList[] = [
 
@@ -49,5 +49,4 @@ this.userService.getAllReviews()
     this.regformrecord.push(email);
     console.log ('>>> Item Added : ', this.regformrecord);
     this.RegFormUpdated.emit(this.regformrecord);*/
-  }
-
+    }

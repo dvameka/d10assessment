@@ -16,7 +16,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 const ROUTES: Routes = [
   { path: 'regform', component: RegformComponent },
   { path: 'confirm', component: ConfirmComponent },
- { path: '',
+ { path: '**',
      redirectTo: '/regform',
      pathMatch: 'full'
  },

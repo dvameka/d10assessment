@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-regform',
@@ -8,12 +9,16 @@ import { NgForm } from '@angular/forms';
 })
 export class RegformComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+  private router: Router,
+  route: ActivatedRoute
+) {}
 
   ngOnInit() { }
 
   processForm(form: NgForm) {
     console.log('form: ', form.value);
+    this.router.navigate(['confirm']);
     form.resetForm();
   }
 
