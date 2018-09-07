@@ -31,7 +31,7 @@ const ROUTES: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule, MatRadioModule, FormsModule, MaterialModule, FlexLayoutModule, LayoutModule,
-    HttpClientModule, RouterModule.forRoot(ROUTES)
+    HttpClientModule, RouterModule.forRoot(ROUTES, { enableTracing: true })
   ],
   providers: [],
   bootstrap: [AppComponent]

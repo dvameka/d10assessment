@@ -18,8 +18,8 @@ export class RegformComponent implements OnInit {
 
   processForm(form: NgForm) {
     console.log('form: ', form.value);
-    this.router.navigate(['confirm']);
-    form.resetForm();
+    this.router.navigate(['/confirm']);
+    /*/form.resetForm();*/
   }
 
 }
