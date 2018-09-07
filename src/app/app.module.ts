@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {MatRadioModule} from '@angular/material/radio';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -29,7 +30,7 @@ const ROUTES: Routes = [
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule, FormsModule, MaterialModule, FlexLayoutModule, LayoutModule,
+    BrowserAnimationsModule, MatRadioModule, FormsModule, MaterialModule, FlexLayoutModule, LayoutModule,
     HttpClientModule, RouterModule.forRoot(ROUTES)
   ],
   providers: [],

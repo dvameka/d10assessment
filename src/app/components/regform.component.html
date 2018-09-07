@@ -13,21 +13,47 @@ fxLayoutGap="10px">
 
   <mat-form-field>
       <input type="password" placeholder="Your password"
-        #passwordField="ngModel"
-        name="password" ngModel matInput required minlength="2" maxlength="10">
-      <mat-hint>Your Password</mat-hint>
+        #password="ngModel"
+        name="password" ngModel matInput pattern="^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$" required>
+      <mat-hint>Minimum of 8 characters, and confirm to password policies [1 Uppercase, 1 Lowercase, and one of @, #, $ symbol].</mat-hint>
+      <mat-error *ngIf="password.hasError('password')">
+         Requires valid email!
+      </mat-error>
+      <mat-error *ngIf="(password.touched || isSubmitted)">
+          Rejected as not conforming to password polices.
+       </mat-error>
   </mat-form-field>
+
+ <!--<mat-form-field>
+      <input type="password" placeholder="Please enter again to confirm password"
+        #confirmpassword="ngModel"
+        name="confirmpassword" ngModel matInput class="form-control" pattern="^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$" required>
+      <mat-hint>Confirmed Password</mat-hint>
+      <div *ngIf="confirmpassword.dirty" [hidden]="!(model.confirmPassword != model.password)" class="help-block alert alert-danger">
+          <span class="help-block alert alert-danger">
+              Password do not match.
+          </span>
+  </div>      
+  </mat-form-field>-->
 
   <mat-form-field>
     <input type="text" placeholder="Your name"
-      #nameField="ngModel"
-      name="name" ngModel matInput required minlength="2" maxlength="10">
+      #name="ngModel" name="name" ngModel matInput required minlength="2" maxlength="10">
     <mat-hint>Your official name</mat-hint>
   </mat-form-field>
+
+
+  <div class="alert alert-danger">Your gender :</div>
+    <mat-radio-group name="gender" ngModel fxLayoutGap='10px'> 
+      <mat-radio-button value="female"> Female </mat-radio-button>
+      <mat-radio-button value="male"> Male </mat-radio-button>
+    </mat-radio-group> 
+
 
   <mat-form-field>
       <input name="dob" placeholder="Date of Birth" 
         ngModel matInput [matDatepicker]="mydate">
+        <mat-hint>Date Format MM/DD/YYYY</mat-hint>
       <mat-datepicker-toggle matSuffix [for]="mydate">
       </mat-datepicker-toggle>
     <mat-datepicker #mydate></mat-datepicker> 
@@ -35,14 +61,14 @@ fxLayoutGap="10px">
 
   <mat-form-field>
       <input type="text" placeholder="Your Corresponding Address"
-      #addressField="ngModel"
+      #address="ngModel"
       name="address" ngModel matInput required minlength="2" maxlength="100">
     <mat-hint>Home Address</mat-hint>
   </mat-form-field>
 
   <mat-form-field>
       <input type="text" placeholder="Country"
-      #countryField="ngModel"
+      #country="ngModel"
       name="country" ngModel matInput required minlength="2" maxlength="10">
     <mat-hint>Country</mat-hint>
   </mat-form-field>
@@ -57,8 +83,8 @@ fxLayoutGap="10px">
   -->
   <mat-form-field>
       <input type="text" placeholder="Contact Number"
-      #telephoneField="ngModel"
-      name="telephone" ngModel matInput required minlength="8" maxlength="14">
+      #phone="ngModel"
+      name="phone" ngModel matInput required minlength="8" maxlength="14">
     <mat-hint>Contact Number</mat-hint>
   </mat-form-field>
 

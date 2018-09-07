@@ -8,7 +8,6 @@ import { NgForm } from '@angular/forms';
 })
 export class RegformComponent implements OnInit {
 
-
   constructor() { }
 
   ngOnInit() { }
